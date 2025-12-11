@@ -56,7 +56,7 @@ const WSYA = () => {
   ];
 
   return (
-    <div className="text-center  py-12 text-primary-foreground pb-16 relative">
+    <div className=" border border-green-50 text-center  py-12 text-primary-foreground pb-16 relative">
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-2">Why should You{" "}  <span
     style={{

@@ -55,6 +55,7 @@ const StatItem: FunctionComponent<Stat & { isFirstItem: boolean }> = ({
     <div
       ref={ref}
       className={`
+        
         relative flex flex-col justify-center items-center py-4 px-2
         w-full md:w-auto
         group
@@ -101,7 +102,7 @@ const Stats: FunctionComponent = () => {
   }
 
   return (
-    <section className="relative w-full px-4 md:px-10 py-16 overflow-hidden z-10">
+    <section className="border border-green-50 relative w-full px-4 md:px-10 py-16 overflow-hidden z-10">
       
       {/* Background Glow for Stats */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-32 bg-yellow-500/10 blur-[80px] -z-10 pointer-events-none" />

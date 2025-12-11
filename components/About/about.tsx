@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <section
-      className=" border border-green-50 relative w-full py-20 px-4 flex justify-center items-center"
+      className="relative w-full py-20 px-4 flex justify-center items-center"
       id="about"
     >
       {/* Background Glow */}

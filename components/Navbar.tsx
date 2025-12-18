@@ -19,7 +19,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // Removed the old CSS file import to prevent conflicts
-// import "./Navbar.css"; 
+// import "./Navbar.css";
 
 declare global {
   interface Window {
@@ -45,7 +45,8 @@ const Navbar: FunctionComponent = () => {
 
   useEffect(() => {
     const handleScroll = () => setScrolling(window.scrollY > 0);
-    const handleResize = () => setIsPortrait(window.innerHeight > window.innerWidth);
+    const handleResize = () =>
+      setIsPortrait(window.innerHeight > window.innerWidth);
 
     handleResize();
     window.addEventListener("scroll", handleScroll);
@@ -74,16 +75,15 @@ const Navbar: FunctionComponent = () => {
       >
         <div className="relative block px-6 py-2">
           <div className="flex items-center justify-between w-full gap-1 capitalize">
-            
             {/* Logo */}
             <Link href="/" aria-label="logo" className="flex items-center">
               <Image
                 unoptimized
                 src={logo}
                 alt="E-Summit'24 logo"
-                width={50}
-                height={20}
-                className="scale-125 sm:w-28 object-contain"
+                width={40}
+                height={15}
+                className="scale-125 sm:w-20 ml-4 object-contain"
               />
             </Link>
 
@@ -103,12 +103,18 @@ const Navbar: FunctionComponent = () => {
                   </DropdownMenuTrigger>
 
                   {/* Added Glass Class to Mobile Dropdown */}
-                  <DropdownMenuContent align="end" className="w-56 mr-2 glass bg-black/80 text-white border-white/20">
+                  <DropdownMenuContent
+                    align="end"
+                    className="w-56 mr-2 glass bg-black/80 text-white border-white/20"
+                  >
                     <DropdownMenuLabel>Navigation</DropdownMenuLabel>
                     <DropdownMenuSeparator className="bg-white/20" />
                     <DropdownMenuGroup>
                       {navItems.map((item, index) => (
-                        <DropdownMenuItem key={index} className="focus:bg-white/10 focus:text-white cursor-pointer">
+                        <DropdownMenuItem
+                          key={index}
+                          className="focus:bg-white/10 focus:text-white cursor-pointer"
+                        >
                           <Link href={item.link} className="w-full">
                             {item.name}
                           </Link>
@@ -119,21 +125,35 @@ const Navbar: FunctionComponent = () => {
                       <DropdownMenuItem className="p-0 focus:bg-transparent">
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" className="w-full justify-start text-white hover:bg-white/10 px-2 h-8">
+                            <Button
+                              variant="ghost"
+                              className="w-full justify-start text-white hover:bg-white/10 px-2 h-8"
+                            >
                               SJ
                             </Button>
                           </DropdownMenuTrigger>
                           <DropdownMenuContent className="w-48 glass bg-black/80 text-white border-white/20">
-                            <DropdownMenuLabel>Startup Junction</DropdownMenuLabel>
+                            <DropdownMenuLabel>
+                              Startup Junction
+                            </DropdownMenuLabel>
                             <DropdownMenuSeparator className="bg-white/20" />
                             <DropdownMenuGroup>
-                              <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-white cursor-pointer">
+                              <DropdownMenuItem
+                                asChild
+                                className="focus:bg-white/10 focus:text-white cursor-pointer"
+                              >
                                 <Link href="/SJ/delhi">SJ - Delhi</Link>
                               </DropdownMenuItem>
-                              <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-white cursor-pointer">
+                              <DropdownMenuItem
+                                asChild
+                                className="focus:bg-white/10 focus:text-white cursor-pointer"
+                              >
                                 <Link href="/SJ/ahmedabad">SJ - Ahmedabad</Link>
                               </DropdownMenuItem>
-                              <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-white cursor-pointer">
+                              <DropdownMenuItem
+                                asChild
+                                className="focus:bg-white/10 focus:text-white cursor-pointer"
+                              >
                                 <Link href="/SJ/bangalore">SJ - Bangalore</Link>
                               </DropdownMenuItem>
                             </DropdownMenuGroup>
@@ -151,7 +171,10 @@ const Navbar: FunctionComponent = () => {
                   {navItems.map((item, index) => (
                     <li key={index}>
                       <Link href={item.link} className="no-underline">
-                        <Button className="text-white hover:bg-white/10 hover:text-primary-foreground transition-colors" variant="ghost">
+                        <Button
+                          className="text-white hover:bg-white/10 hover:text-primary-foreground transition-colors"
+                          variant="ghost"
+                        >
                           {item.name}
                         </Button>
                       </Link>
@@ -179,17 +202,29 @@ const Navbar: FunctionComponent = () => {
                         </Button>
                       </DropdownMenuTrigger>
                       {/* Added Glass Class to Desktop Dropdown */}
-                      <DropdownMenuContent align="end" className="w-56 glass bg-black/80 text-white border-white/20 mt-2">
+                      <DropdownMenuContent
+                        align="end"
+                        className="w-56 glass bg-black/80 text-white border-white/20 mt-2"
+                      >
                         <DropdownMenuLabel>Startup Junction</DropdownMenuLabel>
                         <DropdownMenuSeparator className="bg-white/20" />
                         <DropdownMenuGroup>
-                          <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-white cursor-pointer">
+                          <DropdownMenuItem
+                            asChild
+                            className="focus:bg-white/10 focus:text-white cursor-pointer"
+                          >
                             <Link href="/SJ/delhi">SJ - Delhi</Link>
                           </DropdownMenuItem>
-                          <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-white cursor-pointer">
+                          <DropdownMenuItem
+                            asChild
+                            className="focus:bg-white/10 focus:text-white cursor-pointer"
+                          >
                             <Link href="/SJ/ahmedabad">SJ - Ahmedabad</Link>
                           </DropdownMenuItem>
-                          <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-white cursor-pointer">
+                          <DropdownMenuItem
+                            asChild
+                            className="focus:bg-white/10 focus:text-white cursor-pointer"
+                          >
                             <Link href="/SJ/bangalore">SJ - Bangalore</Link>
                           </DropdownMenuItem>
                         </DropdownMenuGroup>

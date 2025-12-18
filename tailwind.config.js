@@ -2,11 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -65,12 +65,21 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        typing: {
+          from: { width: "0ch" },
+          to: { width: "14ch" },
+        },
+        blink: {
+          "50%": { borderColor: "transparent" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        typing: "typing 3s steps(28) forwards",
+        blink: "blink 1s step-end infinite",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

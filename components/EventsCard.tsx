@@ -102,17 +102,18 @@ const EventsCard = (props: EventProps) => {
               className="w-full"
             >
               <Button
-                className="
-                  w-full bg-gradient-to-r from-yellow-500 to-yellow-600 
-                  text-black font-bold tracking-wider border-0
-                  hover:from-yellow-400 hover:to-yellow-500 
-                  shadow-[0_0_20px_rgba(234,179,8,0.3)]
-                  hover:shadow-[0_0_30px_rgba(234,179,8,0.5)]
-                  rounded-xl py-6 transition-all duration-300
-                "
-              >
-                REGISTER
-              </Button>
+              className="
+               w-full bg-gradient-to-r from-[#F1E821] via-[#23C0AD] to-[#487AFA]
+                text-black font-bold tracking-wider border-0
+              hover:from-[#F1E821]/90 hover:via-[#23C0AD]/90 hover:to-[#487AFA]/90
+              shadow-[0_0_20px_rgba(72,122,250,0.35)]
+              hover:shadow-[0_0_30px_rgba(72,122,250,0.55)]
+              rounded-xl py-6 transition-all duration-300
+              "
+            >
+            REGISTER
+            </Button>
+
             </motion.a>
           </div>
         </motion.div>

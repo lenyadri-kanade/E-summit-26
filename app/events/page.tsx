@@ -20,7 +20,7 @@ interface OwnProps {}
 type Props = OwnProps;
 
 const gradientTextStyle = {
-  background: "linear-gradient(90deg, #F1E821, #23C0AD, #487AFA)",
+  background: "linear-gradient(90deg, #3bb7d3ff, #23C0AD, #487AFA)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
 };

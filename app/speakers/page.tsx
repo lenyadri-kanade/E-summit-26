@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { past_speakers_data } from "@/app/speakers/speaker_data";
 import { present_speakers_data } from "@/app/speakers/speaker_data";
 import SpeakerCard from "@/components/SpeakerCard";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   referrer: "origin-when-cross-origin",
@@ -28,19 +29,17 @@ const page: FunctionComponent<Props> = (props) => {
   return (
     <section>
       <div className="pt-24 w-full min-h-screen flex flex-col items-center">
-        <div>
-          <h1
-             className={"text-6xl m-4 flex justify-center font-semibold sm:py-6"}
-             style={{
-               background: "linear-gradient(90deg, #6A23A6, #E91045)",
-               WebkitBackgroundClip: "text",
-               WebkitTextFillColor: "transparent",
-               display: "inline-block", 
-               
-             }}
+        <div className="mt-0 mb-10 text-center">
+          <p
+            className="font-bold text-4xl inline-block"
+            style={{
+              background: "linear-gradient(180deg, #F1E821, #23C0AD,#487AFA )",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
           >
             Speakers
-          </h1>
+          </p>
         </div>
         <div className={"flex justify-center"}>
           <Tabs
@@ -65,18 +64,27 @@ const page: FunctionComponent<Props> = (props) => {
                     />
                   ))}
               </div> */}
-               
-              <div className={"flex justify-center mt-44"}>
-          <h1
-            className={
-              " text-6xl m-4 flex justify-center font-semibold sm:py-6 "
-            }
-            
-          >
-            COMING  SOON...
-          </h1>
-        </div>
-           {/* <div
+
+              <div
+                className={
+                  "flex justify-center bg-transparent flex-col mt-24 items-center"
+                }
+              >
+                <Image
+                  src={"/presentspeaker/hourglass.png"}
+                  alt="hour-glass"
+                  width={100}
+                  height={10}
+                />
+                <h1
+                  className={
+                    " inline-block text-4xl overflow-hidden whitespace-nowrap mt-5 animate-typing animate-blink "
+                  }
+                >
+                  Coming soon...
+                </h1>
+              </div>
+              {/* <div
            <div
                 className={"md:flex flex-wrap  justify-center items-start p-10"}
               >
@@ -92,11 +100,12 @@ const page: FunctionComponent<Props> = (props) => {
                   />
                 ))}
               </div> */}
-   
             </TabsContent>
             <TabsContent value="pastSpeaker">
               <div
-                className={"md:flex flex-wrap  justify-center items-start p-10"}
+                className={
+                  "md:flex flex-wrap  justify-center bg-transparent/80 items-start p-10"
+                }
               >
                 {past_speakers_data.map((speaker: any, index) => (
                   <SpeakerCard

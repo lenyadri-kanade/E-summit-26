@@ -45,8 +45,9 @@ const Contact: FunctionComponent = () => {
           }}
         >
           Contact Us
-        </p></div>
-        <hr/>
+        </p>
+      </div>
+      <hr />
       <div className="m-5 flex justify-center gap-6">
         <Link
           className="hover:scale-125 transition ease-in-out"
@@ -83,7 +84,7 @@ const Contact: FunctionComponent = () => {
       </div>
 
       {/* Form */}
-      <div className="flex justify-center mt-11">
+      <div className="flex justify-center mt-11 mx-auto max-w-[700px]">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -164,7 +165,10 @@ const Contact: FunctionComponent = () => {
               )}
             />
 
-            <Button className="w-full" type="submit">
+            <Button
+              className="w-full bg-[#23C0AD] hover:bg-[#1d9e8f]"
+              type="submit"
+            >
               Submit
             </Button>
           </form>
@@ -172,7 +176,8 @@ const Contact: FunctionComponent = () => {
       </div>
 
       {/* Address */}
-      <div className="text-center mx-24 my-7">📍
+      <div className="text-center mx-24 my-7">
+        📍
         <p
           className="font-bold text-xl inline-block"
           style={{
@@ -183,8 +188,6 @@ const Contact: FunctionComponent = () => {
         >
           Address
         </p>
-
-
         <p className="text-sm">
           Indian Institute of Technology (Banaras Hindu University), Varanasi,
           India, PIN: 221005
@@ -195,4 +198,3 @@ const Contact: FunctionComponent = () => {
 };
 
 export default Contact;
-

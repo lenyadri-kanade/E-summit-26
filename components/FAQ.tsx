@@ -53,9 +53,9 @@ export default function FAQ() {
       {/* Header with gradient text */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
-          Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Questions</span>
+          Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Questions</span>
         </h2>
-        <div className="h-1 w-20 bg-yellow-500 mx-auto rounded-full"></div>
+        <div className="h-1 w-20 bg-teal-500 mx-auto rounded-full"></div>
       </div>
 
       <div className="w-full max-w-[850px] relative z-10">

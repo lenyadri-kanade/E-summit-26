@@ -9,6 +9,8 @@ import Link from "next/link";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AnimatedBackground } from "./AnimatedBackground";
+import ScrollTicket from "@/components/ui/ScrollTicket";
+
 
 const Hero: FunctionComponent = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);

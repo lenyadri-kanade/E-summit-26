@@ -1,8 +1,21 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
-
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 const About = () => {
+  const paragraphRef = useRef<HTMLParagraphElement | null>(null);
+
+  // Track scroll progress for only this paragraph
+  const { scrollYProgress } = useScroll({
+    target: paragraphRef,
+    offset: ["start 80%", "end 20%"], // animation starts when enters, ends when leaving
+  });
+
+  // Paragraph text
+  const text =
+    "E-Summit is an electrifying celebration of innovation and entrepreneurship, brought to you by the Entrepreneurship Cell (E-Cell) at the Indian Institute of Technology (IIT) BHU.";
+
+  const characters = text.split(""); // split by character
   return (
     <section
       className="relative w-full py-20 px-4 flex justify-center items-center"
@@ -29,7 +42,13 @@ const About = () => {
 
         <div className="text-center space-y-8">
           <h3
-            className="text-3xl md:text-5xl font-extrabold tracking-tight"
+            // className="text-3xl md:text-5xl font-extrabold tracking-tight"
+            className="
+    text-3xl 
+    sm:text-4xl 
+    md:text-5xl 
+    font-extrabold 
+    tracking-tight"
             style={{
               background: "linear-gradient(90deg, #487AFA, #23C0AD, #F1E821)",
               WebkitBackgroundClip: "text",
@@ -40,12 +59,54 @@ const About = () => {
           </h3>
 
           <div className="space-y-6 text-gray-200 leading-relaxed font-light">
-            <h1 className="text-xl md:text-2xl font-medium text-white/90">
-              E-Summit is an electrifying celebration of innovation and
-              entrepreneurship, brought to you by the Entrepreneurship Cell (E-Cell) at the Indian Institute of Technology (IIT) BHU.
-            </h1>
+            {/* <h1 className="text-xl md:text-2xl font-medium text-white/90"> */}
+            {/* ✅ SCROLL COLOR EFFECT APPLIED HERE */}
+            <motion.p
+              ref={paragraphRef}
+              className="
+                text-lg 
+                sm:text-xl 
+                md:text-2xl 
+                lg:text-3xl 
+                leading-relaxed 
+                font-medium
+                flex flex-wrap justify-center
+              "
+            >
+              {characters.map((char, index) => {
+                const start = index / characters.length;
+                const end = start + 1 / characters.length;
 
-            <p className="text-base md:text-lg opacity-80 max-w-3xl mx-auto">
+                const color = useTransform(
+                  scrollYProgress,
+                  [start, end],
+                  ["#9CA3AF", "#FFFFFF"]
+                );
+
+                return (
+                  <motion.span
+                    key={index}
+                    style={{ color }}
+                    className="whitespace-pre"
+                  >
+                    {char}
+                  </motion.span>
+                );
+              })}
+            </motion.p>
+
+            {/* <p className="text-base md:text-lg opacity-80 max-w-3xl mx-auto"> */}
+            <p className="
+  text-sm 
+  sm:text-base 
+  md:text-lg 
+  lg:text-xl 
+  leading-relaxed 
+  opacity-80 
+  max-w-3xl 
+  mx-auto
+">
+
               This annual festival is a convergence of visionary thinkers,
               budding entrepreneurs, and established industry leaders, all
               united by a common passion:{" "}

@@ -61,7 +61,7 @@ const ResponsiveComponent = () => {
         >
           What Our Participants Say
         </h2>
-        <p className="text-[#cfcfcf] mt-3 text-sm md:text-base">
+        <p className="text-[#cfcfcf] mt-3 text-sm sm:text-base md:text-lg lg:text-xl">
           Hear directly from the attendees about their experiences at the summit.
         </p>
       </div>

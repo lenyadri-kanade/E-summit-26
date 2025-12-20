@@ -76,14 +76,14 @@ export default function FAQ() {
               >
                 <AccordionTrigger 
                   className="
-                    px-6 py-4 text-left text-base sm:text-lg md:text-xl font-medium text-gray-100 
-                    hover:no-underline hover:text-blue-400 transition-colors
-                    [&[data-state=open]]:text-blue-400
+                    px-6 py-4 text-left text-lg sm:text-xl md:text-2xl font-medium text-gray-100 
+                    hover:no-underline hover:text-cyan-400 transition-colors
+                    [&[data-state=open]]:text-cyan-400
                   "
                 >
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6 text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed font-light">
+                <AccordionContent className="px-6 pb-6 text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed font-light border-l-2 border-cyan-400  ml-6 pl-4">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

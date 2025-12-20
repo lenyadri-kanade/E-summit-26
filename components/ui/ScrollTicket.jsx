@@ -1,32 +1,36 @@
 import { useInView } from "react-intersection-observer";
 
-import "./ticket.css"; // styles below
-import { useRouter } from "next/navigation";
 import { FaTicket } from "react-icons/fa6";
+
+import { useRouter } from "next/navigation";
+import "./ticket.css";
 
 export default function ScrollTicket() {
   const router = useRouter();
-  // useInView: tells us if target is on screen
   const { ref, inView } = useInView({
-    threshold: 0.3, // 30% visible
-    triggerOnce: true, // show only once
+    threshold: 0.3,
+    triggerOnce: true,
   });
 
   return (
     <>
-      {/* Invisible trigger element somewhere in page */}
+      {/* Invisible trigger */}
       <div ref={ref} style={{ height: "1px" }}></div>
 
-      {/* Show ticket once trigger is in view */}
+      {/* Ticket */}
       {inView && (
         <div
-          className={`ticket-fixed ticket-expand `}
-          onClick={() => router.replace("/payment?type=esummit")}
+          className="ticket-fixed ticket-expand"
+          onClick={() => {
+            router.replace("/pass");
+          }}
         >
           <FaTicket size={28} className="rotate_by_90" />
           <span className="rotate_text font-bold text-[2px]">PASSES</span>
         </div>
       )}
+
+      {/* Slide-in panel */}
     </>
   );
 }

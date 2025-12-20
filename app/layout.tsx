@@ -10,6 +10,7 @@ import "./globals.css";
 import React from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
 import Head from "next/head";
+
 // const inter = Inter({ subsets: ["latin"] });
 // import CustomCursor from "@/components/CustomCursor";
 
@@ -42,20 +43,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon-dark.ico" media="(prefers-color-scheme: dark)" />
-        <link rel="icon" href="/E-Cell-White" media="(prefers-color-scheme: light)" />
+        <link
+          rel="icon"
+          href="/favicon-dark.ico"
+          media="(prefers-color-scheme: dark)"
+        />
+        <link
+          rel="icon"
+          href="/E-Cell-White"
+          media="(prefers-color-scheme: light)"
+        />
       </head>
       <body
         className={cn(
           "min-h-screen bg-black  font-sans antialiased",
-          fontSans.variable,
+          fontSans.variable
         )}
       >
         {/* <div className="flex items-center w-full min-h-screen flex-col"> */}
-          <Navbar />
-          {/*<ParallaxProvider>*/}
-          <main className="flex-1  ">{children}</main>
-          {/*</ParallaxProvider>*/}
+        <Navbar />
+        {/*<ParallaxProvider>*/}
+        <main className="flex-1  ">{children}</main>
+        {/*</ParallaxProvider>*/}
         {/* </div> */}
         <Footer />
         <Toaster />

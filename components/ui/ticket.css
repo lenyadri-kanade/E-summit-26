@@ -1,17 +1,18 @@
 .ticket-fixed {
   position: fixed;
   top: 50%;
-  right: -2px; /* half outside screen */
+  right: -15px; /* half outside screen */
   transform: translateY(-50%);
   height: 90px;
-  width: 80px; /* collapsed width */
+  /* collapsed width */
   cursor: pointer;
+  width: 80px;
 
   display: flex;
   align-items: center;
   gap: 2px;
   justify-content: center;
-
+  z-index: 100;
   background: linear-gradient(90deg, #487afa, #23c0ad, #f1e821);
   border-radius: 7px 0 0 7px;
   overflow: hidden;
@@ -51,5 +52,10 @@
   transform: rotate(-90deg);
   font-size: 18px;
   margin-left: -20px;
-  margin-right: -10px;
+}
+
+@media (min-width: 800px) {
+  .ticket-fixed {
+    width: 100px;
+  }
 }

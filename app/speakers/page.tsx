@@ -10,8 +10,8 @@ import InteractiveBackground from "@/components/InteractiveBackground";
 export const metadata: Metadata = {
   referrer: "origin-when-cross-origin",
   title: {
-    default: "Speakers | E-Summit'25 IIT BHU",
-    template: "%s | Speakers | E-Summit'25 IIT BHU",
+    default: "Speakers | E-Summit'26 IIT BHU",
+    template: "%s | Speakers | E-Summit'26 IIT BHU",
   },
 };
 

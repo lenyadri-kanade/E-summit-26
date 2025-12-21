@@ -119,7 +119,7 @@ const Navbar: FunctionComponent = () => {
                     transition-colors
                   `}
                 >
-                  E‑Summit 25
+                  E‑Summit 26
                 </span>
               </Link>
 
@@ -294,7 +294,7 @@ const Navbar: FunctionComponent = () => {
               Menu
             </span>
             <span className="text-[11px] text-white/40">
-              E‑Summit 25
+              E‑Summit 26
             </span>
           </div>
 

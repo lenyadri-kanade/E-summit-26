@@ -7,7 +7,7 @@ import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-import logo from "@/public/logos/E-Cell-White[1].png";
+import logo from "@/public/logos/esummit26.png";
 
 import {
   DropdownMenu,
@@ -94,22 +94,22 @@ const Navbar: FunctionComponent = () => {
           {/* subtle inner ring */}
           <div className="pointer-events-none absolute inset-0 rounded-[999px] ring-1 ring-white/5" />
 
-          <div className="relative px-4 md:px-6 py-2.5">
+          <div className="relative px- md:px-6 py-0">
             <div className="flex items-center justify-between gap-4">
               {/* Left: logo + brand text (like Apple wordmark) */}
-              <Link href="/" className="flex items-center gap-2 shrink-0 group">
+              <Link href="/" className="flex items-center gap-0 shrink-0 group">
                 <Image
                   unoptimized
                   src={logo}
                   alt="E-Summit Logo"
-                  width={96}
-                  height={56}
+                  width={170}
+                  height={96}
                   className={`
                     object-contain transition-transform duration-300
                     ${scrolling ? "scale-[0.9]" : "scale-100"}
                   `}
                 />
-                <span
+                {/* <span
                   className={`
                     hidden sm:inline-block text-[15px] tracking-[0.18em]
                     uppercase text-white/70 group-hover:text-white
@@ -117,7 +117,7 @@ const Navbar: FunctionComponent = () => {
                   `}
                 >
                   E‑Summit 26
-                </span>
+                </span> */}
               </Link>
 
               {/* ========== DESKTOP NAV (APPLE‑LIKE) ========== */}
@@ -215,7 +215,7 @@ const Navbar: FunctionComponent = () => {
                 <Link href="/payment?type=esummit">
                   <Button
                     className="
-                      rounded-full text-[16px] font-semibold text-white
+                      rounded-full text-[16px] font-bold text-white
                       px-4 py-1.5 h-auto
                       transition-transform duration-200
                       hover:scale-[1.04]

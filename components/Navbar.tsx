@@ -119,13 +119,13 @@ const Navbar: FunctionComponent = () => {
                     transition-colors
                   `}
                 >
-                  E‑Summit 25
+                  E‑Summit 26
                 </span>
               </Link>
 
               {/* ========== DESKTOP NAV (APPLE‑LIKE) ========== */}
               <div className="hidden lg:flex items-center justify-between flex-1">
-                <ul className="flex items-center gap-1 mx-auto text-[13px] font-medium">
+               <ul className="flex items-center gap-2 mx-auto text-[15px] font-semibold">
                   {navItems.map((item) => {
                     const isActive = pathname === item.link;
                     return (
@@ -294,7 +294,7 @@ const Navbar: FunctionComponent = () => {
               Menu
             </span>
             <span className="text-[11px] text-white/40">
-              E‑Summit 25
+              E‑Summit 26
             </span>
           </div>
 

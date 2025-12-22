@@ -1,7 +1,7 @@
 "use client";
 import React, { FunctionComponent, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import TicketCard from "./TicketCard";
+import PassCard from "../../components/ui/TicketCard";
 interface OwnProps {}
 
 type Props = OwnProps;
@@ -54,54 +54,85 @@ const Page: FunctionComponent<Props> = (props) => {
         </div>
         {type === "esummit" && (
           <>
-            <iframe
-              id="ts-iframe"
-              src="https://www.townscript.com/v2/widget/esummit-2026-iitbhu-103000/booking"
-              height="600"
-              width="80%"
-            ></iframe>
-            <div className="flex flex-col mt-10 gap-10">
-              <div className="flex gap-10">
-                <TicketCard
-                  title="E Summit'26 - Silver Pass"
-                  info_div_classes="silver"
-                  features={[
-                    "Hospitality Kit",
-                    "Keynote Speaker Session",
-                    "Fireside Chat with Founders",
-                    "Networking at Startup Expo",
-                    "Events and competitions",
-                    "Access to Panel Discussions",
-                  ]}
-                />
-                <TicketCard
-                  title="E Summit'26 - Gold Pass"
-                  info_div_classes="gold"
-                  features={[
-                    "Hospitality Kit",
-                    "Keynote Speaker Session",
-                    "Fireside Chat with Founders",
-                    "Networking at Startup Expo",
-                    "Events and competitions",
-                    "Access to Panel Discussions",
-                  ]}
-                />
-              </div>
+            <div className="md:w-[1000px] sm:w-[700px] flex justify-center">
+              <iframe
+                id="ts-iframe"
+                src="https://www.townscript.com/v2/widget/esummit-2026-iitbhu-103000/booking"
+                height="600"
+                width="100%"
+              ></iframe>
+            </div>
 
-              <div className="mx-auto">
-                <TicketCard
-                  title="E Summit'26 - Diamond Pass"
-                  info_div_classes="diamond"
-                  features={[
-                    "Hospitality Kit",
-                    "Keynote Speaker Session",
-                    "Fireside Chat with Founders",
-                    "Networking at Startup Expo",
-                    "Events and competitions",
-                    "Access to Panel Discussions",
-                  ]}
-                />
-              </div>
+            <div className="flex sm:gap-2 xl:gap-6 flex-col sm:flex-row my-10 mx-auto ">
+              <PassCard
+                title="Silver Pass"
+                originalPrice={799}
+                priceText="₹649/-"
+                features={[
+                  { label: "Hospitality Kit", available: true },
+                  { label: "Keynote Speaker Session", available: true },
+                  { label: "Fireside Chat with Founders", available: true },
+                  { label: "Networking at Startup Expo", available: true },
+                  { label: "Events and Competitions", available: true },
+                  { label: "Access to Panel Discussions", available: true },
+                  { label: "Accomodation", available: false },
+                  {
+                    label: "Vouchers and Perks from sponsors",
+                    available: false,
+                  },
+                  { label: "E-summit Merch", available: false },
+                  {
+                    label: "Food from Fri. night to Sun. night",
+                    available: false,
+                  },
+                ]}
+              />
+              <PassCard
+                title="Gold Pass"
+                originalPrice={2099}
+                priceText="₹1899/-"
+                features={[
+                  { label: "Hospitality Kit", available: true },
+                  { label: "Keynote Speaker Session", available: true },
+                  { label: "Fireside Chat with Founders", available: true },
+                  { label: "Networking at Startup Expo", available: true },
+                  { label: "Events and Competitions", available: true },
+                  { label: "Access to Panel Discussions", available: true },
+                  { label: "Accomodation", available: true },
+                  {
+                    label: "Vouchers and Perks from sponsors",
+                    available: true,
+                  },
+                  { label: "E-summit Merch", available: false },
+                  {
+                    label: "Food from Fri. night to Sun. night",
+                    available: false,
+                  },
+                ]}
+              />
+              <PassCard
+                title="Diamond Pass"
+                originalPrice={2399}
+                priceText="₹2199/-"
+                features={[
+                  { label: "Hospitality Kit", available: true },
+                  { label: "Keynote Speaker Session", available: true },
+                  { label: "Fireside Chat with Founders", available: true },
+                  { label: "Networking at Startup Expo", available: true },
+                  { label: "Events and Competitions", available: true },
+                  { label: "Access to Panel Discussions", available: true },
+                  { label: "Accomodation", available: true },
+                  {
+                    label: "Vouchers and Perks from sponsors",
+                    available: true,
+                  },
+                  { label: "E-summit Merch", available: true },
+                  {
+                    label: "Food from Fri. night to Sun. night",
+                    available: true,
+                  },
+                ]}
+              />
             </div>
           </>
         )}

@@ -1178,20 +1178,76 @@ const PageContent: FunctionComponent = () => {
                 />
               </div>
 
-              <div className="mx-auto">
-                <TicketCard
-                  title="E Summit'26 - Diamond Pass"
-                  info_div_classes="diamond"
-                  features={[
-                    "Hospitality Kit",
-                    "Keynote Speaker Session",
-                    "Fireside Chat with Founders",
-                    "Networking at Startup Expo",
-                    "Events and competitions",
-                    "Access to Panel Discussions",
-                  ]}
-                />
-              </div>
+            <div className="flex sm:gap-2 xl:gap-6 flex-col sm:flex-row my-10 mx-auto ">
+              <PassCard
+                title="Silver Pass"
+                originalPrice={799}
+                priceText="₹649/-"
+                features={[
+                  { label: "Hospitality Kit", available: true },
+                  { label: "Keynote Speaker Session", available: true },
+                  { label: "Fireside Chat with Founders", available: true },
+                  { label: "Networking at Startup Expo", available: true },
+                  { label: "Events and Competitions", available: true },
+                  { label: "Access to Panel Discussions", available: true },
+                  { label: "Accomodation", available: false },
+                  {
+                    label: "Vouchers and Perks from sponsors",
+                    available: false,
+                  },
+                  { label: "E-summit Merch", available: false },
+                  {
+                    label: "Food from Fri. night to Sun. night",
+                    available: false,
+                  },
+                ]}
+              />
+              <PassCard
+                title="Gold Pass"
+                originalPrice={2099}
+                priceText="₹1899/-"
+                features={[
+                  { label: "Hospitality Kit", available: true },
+                  { label: "Keynote Speaker Session", available: true },
+                  { label: "Fireside Chat with Founders", available: true },
+                  { label: "Networking at Startup Expo", available: true },
+                  { label: "Events and Competitions", available: true },
+                  { label: "Access to Panel Discussions", available: true },
+                  { label: "Accomodation", available: true },
+                  {
+                    label: "Vouchers and Perks from sponsors",
+                    available: true,
+                  },
+                  { label: "E-summit Merch", available: false },
+                  {
+                    label: "Food from Fri. night to Sun. night",
+                    available: false,
+                  },
+                ]}
+              />
+              <PassCard
+                title="Diamond Pass"
+                originalPrice={2399}
+                priceText="₹2199/-"
+                features={[
+                  { label: "Hospitality Kit", available: true },
+                  { label: "Keynote Speaker Session", available: true },
+                  { label: "Fireside Chat with Founders", available: true },
+                  { label: "Networking at Startup Expo", available: true },
+                  { label: "Events and Competitions", available: true },
+                  { label: "Access to Panel Discussions", available: true },
+                  { label: "Accomodation", available: true },
+                  {
+                    label: "Vouchers and Perks from sponsors",
+                    available: true,
+                  },
+                  { label: "E-summit Merch", available: true },
+                  {
+                    label: "Food from Fri. night to Sun. night",
+                    available: true,
+                  },
+                ]}
+              />
             </div>
           </>
         )}

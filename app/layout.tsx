@@ -1,34 +1,46 @@
-// "use client";
 import type { Metadata } from "next";
-import { cn } from "@/lib/utils";
-import { fontSans } from "@/lib/fonts";
-import { Toaster } from "@/components/ui/toaster";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import LottieNavbar from "@/components/LottieNavbar"; 
-import "./globals.css";
-import React from "react";
-
+import { ClientLayout } from "./client-layout";
 
 export const metadata: Metadata = {
-  applicationName: "E-Summit'26 | IIT BHU Varanasi",
-  referrer: "origin-when-cross-origin",
-  title: {
-    default: "E-Summit'26 | IIT BHU Varanasi",
-    template: "%s | E-Summit'26 | IIT BHU Varanasi",
+  title: "IIT BHU Varanasi: E-Summit'26",
+  description: "E-Summit has a range of events, competitions, panel discussions, networking opportunities for every vertical of our entrepreneurial society.",
+  
+  icons: {
+    icon: [
+      {
+        url: "/favicon-dark.ico",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        url: "/E-Cell-White[1].png",
+        media: "(prefers-color-scheme: light)",
+      },
+    ],
   },
-  description: "E-Summit'26 | IIT BHU Varanasi",
-  category: "Technology and Entrepreneurship Summit",
-  keywords: [
-    "E-Summit",
-    "E-Summit'26",
-    "E-Summit'26 IIT BHU Varanasi",
-    "IIT BHU Varanasi",
-    "E-Summit IIT BHU Varanasi",
-    "E-Summit'26 IIT BHU",
-    "esummit 26",
-    "esummit",
-  ],
+  
+  openGraph: {
+    title: "IIT BHU Varanasi: E-Summit'26",
+    description: "E-Summit has a range of events, competitions, panel discussions, networking opportunities for every vertical of our entrepreneurial society.",
+    url: "https://esummit.ecelliitbhu.com",
+    siteName: "E-Cell IIT BHU",
+    images: [
+      {
+        url: "/logos/ecell-search-logo-blackbg.jpeg", // CHANGE THIS TO YOUR PREFERRED IMAGE
+        width: 1200,
+        height: 630,
+        alt: "E-Summit 26 Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  
+  twitter: {
+    card: "summary_large_image",
+    title: "IIT BHU Varanasi: E-Summit'26",
+    description: "E-Summit has a range of events, competitions, panel discussions, networking opportunities for every vertical of our entrepreneurial society.",
+    images: ["/logos/ecell-search-logo-blackbg.jpeg"], // CHANGE THIS TOO
+  },
 };
 
 export default function RootLayout({
@@ -36,41 +48,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <head>
-        <link
-          rel="icon"
-          href="/favicon-dark.ico"
-          media="(prefers-color-scheme: dark)"
-        />
-        <link
-          rel="icon"
-          href="/E-Cell-White"
-          media="(prefers-color-scheme: light)"
-        />
-      </head>
-
-      <body
-        className={cn(
-          "min-h-screen bg-black font-sans antialiased",
-          fontSans.variable
-        )}
-      >
-       
-        <Navbar />
-
-        
-        <main className="flex-1">{children}</main>
-
-       
-        <div className="lg:hidden">
-          <LottieNavbar />
-        </div>
-
-        <Footer />
-        <Toaster />
-      </body>
-    </html>
-  );
+  return <ClientLayout>{children}</ClientLayout>;
 }
